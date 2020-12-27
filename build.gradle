@@ -23,7 +23,8 @@ dependencies {
 	// You may need to force-disable transitiveness on them.
 
 	// HTLib
-	modImplementation files("../HTLib/build/libs/HTLib-0.0.1-dev.jar")
+	//TODO Don't have this bundled in.
+	modImplementation files("HTLib/HTLib-0.0.1.jar")
 }
 
 processResources {
