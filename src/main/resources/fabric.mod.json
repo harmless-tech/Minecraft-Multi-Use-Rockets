@@ -1,37 +1,37 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "multiuserockets",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Multi-Use Rockets",
+  "description": "Adds rockets to the game which can be used multiple times to improve elytra travel.",
   "authors": [
-    "Me!"
+    "Harmless_Tech"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "",
+    "sources": "https://github.com/harmless-tech/Minecraft-Multi-Use-Rockets"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "All Rights Reserved",
+  "icon": "assets/multiuserockets/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "tech.harmless.minecraft.multiuserockets.MultiUseRockets"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "multiuserockets.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.16.x",
+    "htlib": ">=0.0.1"
   },
   "suggests": {
-    "another-mod": "*"
   }
 }
