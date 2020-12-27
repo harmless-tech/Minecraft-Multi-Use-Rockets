@@ -10,6 +10,10 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+	maven { url "https://jitpack.io" }
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -23,8 +27,7 @@ dependencies {
 	// You may need to force-disable transitiveness on them.
 
 	// HTLib
-	//TODO Don't have this bundled in.
-	modImplementation files("HTLib/HTLib-0.0.1.jar")
+	modImplementation "com.github.harmless-tech:Minecraft-HTLib:master-SNAPSHOT"
 }
 
 processResources {
