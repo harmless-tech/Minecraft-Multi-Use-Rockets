@@ -1,2 +1,13 @@
 {
+  "item.multiuserockets.core_1": "Gunpowder Core",
+  "item.multiuserockets.core_2": "Gunpowder Core",
+  "item.multiuserockets.core_3": "Gunpowder Core",
+  "item.multiuserockets.core_4": "Gunpowder Core",
+  "item.multiuserockets.core_5": "Gunpowder Core",
+  "item.multiuserockets.core_1.tooltip": "§3Tier 1 Core",
+  "item.multiuserockets.core_2.tooltip": "§3Tier 2 Core",
+  "item.multiuserockets.core_3.tooltip": "§3Tier 3 Core",
+  "item.multiuserockets.core_4.tooltip": "§3Tier 4 Core",
+  "item.multiuserockets.core_5.tooltip.1": "§3Tier 5 Core",
+  "item.multiuserockets.core_5.tooltip.2": "§cDo not use while wet!"
 }

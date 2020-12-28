@@ -3,7 +3,7 @@ package tech.harmless.minecraft.multiuserockets;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tech.harmless.minecraft.htlib.lib.annotations.HTMod;
+import tech.harmless.minecraft.htlib.annotations.HTMod;
 
 //TODO Use HTLib.
 @HTMod(id = MultiUseRockets.ID, name = MultiUseRockets.NAME, version = MultiUseRockets.VERSION)
@@ -17,5 +17,7 @@ public class MultiUseRockets implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        LOG.info("Initializing " + NAME + " " + VERSION + "...");
+        LOG.info("Done initializing " + NAME + ".");
     }
 }

@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Multi-Use Rockets",
-  "description": "Adds rockets to the game which can be used multiple times to improve elytra travel.",
+  "description": "Adds rockets to the game which can be used multiple times in order to improve elytra travel.",
   "authors": [
     "Harmless_Tech"
   ],
@@ -13,7 +13,7 @@
     "sources": "https://github.com/harmless-tech/Minecraft-Multi-Use-Rockets"
   },
 
-  "license": "All Rights Reserved",
+  "license": "MIT License",
   "icon": "assets/multiuserockets/icon.png",
 
   "environment": "*",
