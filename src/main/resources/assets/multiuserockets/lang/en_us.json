@@ -11,6 +11,18 @@
   "item.multiuserockets.core_5.tooltip.1": "§3Tier 5 Core",
   "item.multiuserockets.core_5.tooltip.2": "§cDo not use while wet!",
 
+  "item.multiuserockets.stacked_gunpowder": "Stacked Gunpowder",
+  "item.multiuserockets.rocket_body": "Rocket Body",
+  "item.multiuserockets.iron_tube": "Iron Tube",
+  "item.multiuserockets.nether_tube": "Nether Tube",
+  "item.multiuserockets.strong_nether_tube": "Strong Nether Tube",
+
+  "item.multiuserockets.rocket_1": "Tier 1 Rocket",
+  "item.multiuserockets.rocket_2": "Tier 2 Rocket",
+  "item.multiuserockets.rocket_3": "Tier 3 Rocket",
+  "item.multiuserockets.rocket_4": "Tier 4 Rocket",
+  "item.multiuserockets.rocket_5": "Tier 5 Rocket",
+
   "block.multiuserockets.gunpowder_block": "Block of Gunpowder",
-  "block.multiuserockets.gunpowder_block.tooltip": "§cExplodes when it interacts with fire or lava."
+  "block.multiuserockets.gunpowder_block.tooltip": "§cExplodes when it interacts with fire, lava, or magma blocks."
 }
