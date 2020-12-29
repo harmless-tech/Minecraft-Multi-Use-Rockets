@@ -1,11 +1,10 @@
-package tech.harmless.minecraft.multiuserockets.items;
+package tech.harmless.minecraft.multiuserockets.items.cores;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -33,17 +32,23 @@ public class ItemCore5 extends HTItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack item = user.getActiveItem();
+        ItemStack item = user.getStackInHand(hand);
 
         if(user.isTouchingWaterOrRain() || user.isOnFire()) {
-            //TODO Tweak power?
-            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 50, true,
-                    Explosion.DestructionType.DESTROY);
+            if(!world.isClient()) {
+                //TODO Tweak power?
+                world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 50, true,
+                        Explosion.DestructionType.DESTROY);
 
-            return new TypedActionResult<>(ActionResult.SUCCESS, item);
+                if(!user.isCreative())
+                    item.decrement(1);
+            }
+
+
+            return TypedActionResult.success(item, world.isClient);
         }
 
-        return super.use(world, user, hand);
+        return TypedActionResult.pass(item);
     }
 
     @Override

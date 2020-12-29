@@ -1,4 +1,4 @@
-package tech.harmless.minecraft.multiuserockets.items;
+package tech.harmless.minecraft.multiuserockets.items.cores;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -10,16 +10,16 @@ import tech.harmless.minecraft.htlib.item.HTItem;
 
 import java.util.List;
 
-public class ItemCore4 extends HTItem {
+public class ItemCore2 extends HTItem {
 
-    public ItemCore4() {
-        super("core_4", ItemCore1.SETTINGS);
+    public ItemCore2() {
+        super("core_2", ItemCore1.SETTINGS);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
-        tooltip.add(new TranslatableText("item.multiuserockets.core_4.tooltip"));
+        tooltip.add(new TranslatableText("item.multiuserockets.core_2.tooltip"));
     }
 }

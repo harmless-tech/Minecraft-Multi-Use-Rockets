@@ -82,7 +82,9 @@ public class BlockGunpowder extends HTBlock {
     }
 
     private void explode(World world, BlockPos pos) {
-        world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 8, Explosion.DestructionType.DESTROY);
-        world.removeBlock(pos, false);
+        if(!world.isClient) {
+            world.removeBlock(pos, false);
+            world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 8, Explosion.DestructionType.DESTROY);
+        }
     }
 }
