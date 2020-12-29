@@ -9,5 +9,8 @@
   "item.multiuserockets.core_3.tooltip": "§3Tier 3 Core",
   "item.multiuserockets.core_4.tooltip": "§3Tier 4 Core",
   "item.multiuserockets.core_5.tooltip.1": "§3Tier 5 Core",
-  "item.multiuserockets.core_5.tooltip.2": "§cDo not use while wet!"
+  "item.multiuserockets.core_5.tooltip.2": "§cDo not use while wet!",
+
+  "block.multiuserockets.gunpowder_block": "Block of Gunpowder",
+  "block.multiuserockets.gunpowder_block.tooltip": "§cExplodes when it interacts with fire or lava."
 }

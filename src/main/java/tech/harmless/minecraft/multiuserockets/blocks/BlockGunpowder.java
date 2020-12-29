@@ -6,15 +6,21 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 import tech.harmless.minecraft.htlib.HTRegistry;
 import tech.harmless.minecraft.htlib.block.HTBlock;
+
+import java.util.List;
 
 //TODO Fix lighting issues after blowing up. Fix blocks being weird after blowing up.
 public class BlockGunpowder extends HTBlock {
@@ -22,6 +28,13 @@ public class BlockGunpowder extends HTBlock {
     public BlockGunpowder() {
         super("gunpowder_block", FabricBlockSettings.of(Material.WOOL),
                 new FabricItemSettings().group(HTRegistry.ITEM_GROUP));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        super.appendTooltip(stack, world, tooltip, options);
+
+        tooltip.add(new TranslatableText("block.multiuserockets.gunpowder_block.tooltip"));
     }
 
     @Override
@@ -38,7 +51,9 @@ public class BlockGunpowder extends HTBlock {
         for(Vec3i p : positions) {
             BlockState eState = world.getBlockState(pos.add(p));
 
-            if(eState != null && (eState.isOf(Blocks.FIRE) || eState.isOf(Blocks.LAVA))) {
+            if(eState != null &&
+                    (eState.isOf(Blocks.FIRE) || eState.isOf(Blocks.LAVA) || eState.isOf(Blocks.MAGMA_BLOCK) ||
+                            eState.isOf(Blocks.SOUL_FIRE))) {
                 explode(world, pos);
                 break;
             }
@@ -51,7 +66,8 @@ public class BlockGunpowder extends HTBlock {
         super.neighborUpdate(state, world, pos, block, fromPos, notify);
 
         BlockState eState = world.getBlockState(fromPos);
-        if(eState != null && (eState.isOf(Blocks.FIRE) || eState.isOf(Blocks.LAVA)))
+        if(eState != null && (eState.isOf(Blocks.FIRE) || eState.isOf(Blocks.LAVA) || eState.isOf(Blocks.MAGMA_BLOCK) ||
+                eState.isOf(Blocks.SOUL_FIRE)))
             explode(world, pos);
     }
 
