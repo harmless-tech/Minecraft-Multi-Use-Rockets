@@ -12,10 +12,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 import tech.harmless.minecraft.htlib.item.HTItem;
-import tech.harmless.minecraft.multiuserockets.MultiUseRockets;
 
 import java.util.List;
 
+//TODO Fix lighting issues after blowing up. Fix blocks being weird after blowing up.
+//TODO Maybe don't blow up on water, something else instead like lava.
 public class ItemCore5 extends HTItem {
 
     public ItemCore5() {
@@ -34,9 +35,10 @@ public class ItemCore5 extends HTItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack item = user.getActiveItem();
 
-        if(user.isTouchingWaterOrRain()) {
+        if(user.isTouchingWaterOrRain() || user.isOnFire()) {
+            //TODO Tweak power?
             world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 50, true,
-                    Explosion.DestructionType.BREAK);
+                    Explosion.DestructionType.DESTROY);
 
             return new TypedActionResult<>(ActionResult.SUCCESS, item);
         }
