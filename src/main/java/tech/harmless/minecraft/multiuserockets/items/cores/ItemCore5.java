@@ -1,5 +1,7 @@
 package tech.harmless.minecraft.multiuserockets.items.cores;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -23,6 +25,7 @@ public class ItemCore5 extends HTItem {
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
@@ -52,6 +55,7 @@ public class ItemCore5 extends HTItem {
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
     public boolean hasGlint(ItemStack stack) {
         return true;
     }

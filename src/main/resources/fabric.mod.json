@@ -17,6 +17,7 @@
   "icon": "assets/multiuserockets/icon.png",
 
   "environment": "*",
+  "accessWidener" : "multiuserockets.accesswidener",
   "entrypoints": {
     "main": [
       "tech.harmless.minecraft.multiuserockets.MultiUseRockets"

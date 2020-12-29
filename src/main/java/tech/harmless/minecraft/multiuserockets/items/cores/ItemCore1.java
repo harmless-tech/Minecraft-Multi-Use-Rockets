@@ -1,5 +1,7 @@
 package tech.harmless.minecraft.multiuserockets.items.cores;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -12,6 +14,7 @@ import tech.harmless.minecraft.htlib.item.HTItem;
 
 import java.util.List;
 
+//TODO Some of these core classes could probably be merged.
 public class ItemCore1 extends HTItem {
 
     public static final Settings SETTINGS = new FabricItemSettings().group(HTRegistry.ITEM_GROUP).maxCount(16);
@@ -21,6 +24,7 @@ public class ItemCore1 extends HTItem {
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 

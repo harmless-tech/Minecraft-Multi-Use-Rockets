@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import tech.harmless.minecraft.htlib.HTRegistry;
 import tech.harmless.minecraft.htlib.annotations.HTMod;
 import tech.harmless.minecraft.htlib.item.HTItem;
+import tech.harmless.minecraft.multiuserockets.items.rockets.Rocket;
 
 //TODO Use HTLib.
 @HTMod(id = MultiUseRockets.ID, name = MultiUseRockets.NAME, version = MultiUseRockets.VERSION)
@@ -24,9 +25,16 @@ public class MultiUseRockets implements ModInitializer {
 
         // Items
         HTRegistry.addItem(ID, new HTItem("stacked_gunpowder", new FabricItemSettings().group(HTRegistry.ITEM_GROUP)));
+        HTRegistry.addItem(ID, new HTItem("rocket_body", new FabricItemSettings().group(HTRegistry.ITEM_GROUP)));
         HTRegistry.addItem(ID, new HTItem("iron_tube", new FabricItemSettings().group(HTRegistry.ITEM_GROUP)));
         HTRegistry.addItem(ID, new HTItem("nether_tube", new FabricItemSettings().group(HTRegistry.ITEM_GROUP)));
-        HTRegistry.addItem(ID, new HTItem("rocket_body", new FabricItemSettings().group(HTRegistry.ITEM_GROUP)));
+
+        //TODO Configurable uses.
+        HTRegistry.addItem(ID, new Rocket(1));
+        HTRegistry.addItem(ID, new Rocket(2));
+        HTRegistry.addItem(ID, new Rocket(3));
+        HTRegistry.addItem(ID, new Rocket(4));
+        HTRegistry.addItem(ID, new Rocket(5)); //TODO Probably want a custom class.
 
         LOG.info("Done initializing " + NAME + ".");
     }

@@ -29,6 +29,10 @@ dependencies {
 	modImplementation "tech.harmless:minecraft-htlib:master-SNAPSHOT"
 }
 
+minecraft {
+	accessWidener "src/main/resources/multiuserockets.accesswidener"
+}
+
 processResources {
 	inputs.property "version", project.version
 
