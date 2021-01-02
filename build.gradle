@@ -14,9 +14,9 @@ repositories {
 	maven { url "https://jitpack.io" }
 }
 
-configurations.all {
+/*configurations.all {
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
+}*/
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -26,7 +26,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// HTLib
-	modImplementation "tech.harmless:minecraft-htlib:master-SNAPSHOT"
+	modImplementation "tech.harmless:minecraft-htlib:v0.0.3"
 }
 
 minecraft {
