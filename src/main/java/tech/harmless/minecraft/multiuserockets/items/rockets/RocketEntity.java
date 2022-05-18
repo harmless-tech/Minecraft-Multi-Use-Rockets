@@ -19,7 +19,7 @@ public class RocketEntity extends FireworkRocketEntity {
     public RocketEntity(@NotNull World world, @NotNull ItemStack stack, @NotNull LivingEntity shooter) {
         super(EntityType.FIREWORK_ROCKET, world);
 
-        dataTracker.set(SHOOTER_ENTITY_ID, OptionalInt.of(shooter.getEntityId()));
+        dataTracker.set(SHOOTER_ENTITY_ID, OptionalInt.of(shooter.getId()));
         this.shooter = shooter;
 
         setOwner(shooter);
@@ -28,9 +28,9 @@ public class RocketEntity extends FireworkRocketEntity {
         updatePosition(shooter.getX(), shooter.getY(), shooter.getZ());
 
         int i = 1;
-        if(!stack.isEmpty() && stack.hasTag()) {
+        if(!stack.isEmpty() && stack.hasNbt()) {
             dataTracker.set(ITEM, stack.copy());
-            i += stack.getOrCreateSubTag("Fireworks").getByte("Flight"); //TODO Different tag?
+            i += stack.getOrCreateSubNbt("Fireworks").getByte("Flight"); //TODO Different tag?
         }
 
         setVelocity(this.random.nextGaussian() * 0.001D, 0.05D, this.random.nextGaussian() * 0.001D);
