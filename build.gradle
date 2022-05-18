@@ -18,7 +18,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// HTLib
-	modImplementation  files("../Minecraft-HTLib/build/libs/htlib-0.2.0.jar") //"tech.harmless.minecraft.htlib:htlib:0.1.4"
+	modImplementation  files("lib/htlib-0.2.0.jar") //"tech.harmless.minecraft.htlib:htlib:0.1.4"
 }
 
 loom {
